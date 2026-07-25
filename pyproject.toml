@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gitshort"
+version = "0.1.0"
+description = "Pre-flight repo status checker for git — shows uncommitted changes, upstream divergence, and branch stats in one compact snapshot."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "ProjectCreationAgent"}]
+keywords = ["git", "cli", "developer-tools", "status"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Topic :: Software Development :: Version Control :: Git",
+    "Typing :: Typed",
+]
+
+[project.scripts]
+gitshort = "gitshort.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+gitshort = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
