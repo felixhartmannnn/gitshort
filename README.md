@@ -1,57 +1,16 @@
-# gitshort
 
-Compact, local-first `git` repository status snapshot tool.
 
-## What it does
+## Development
 
-`gitshort` summarizes a repository in one scannable block without stashing, checking out, or mutating the working tree:
-
-- detected repo root, current branch, and upstream
-- ahead/behind counts from the upstream tracking ref
-- working-tree change counts in one line
-- optional JSON mode for scripts and CI
-
-## Installation
+Run tests before pushing changes:
 
 ```bash
-python -m pip install .
+python -m pip install -e .
+python -m pytest tests -q
 ```
 
-After installing, `gitshort` is on your PATH.
+Report failures as GitHub issues with pytest output and the command set used.
 
-## Usage
+## Contributing
 
-```bash
-gitshort [path]
-gitshort path --json
-gitshort path --no-upstream
-```
-
-Default `path` is `.`.
-
-## Example
-
-```
-? my-project
-  branch: feature/dashboard
-  origin/main: ahead 3 / behind 0
-  changes: dirty (2 insertions, 1 staged, 1 unstaged)
-```
-
-## Project structure
-
-```
-src/gitshort/
-  cli.py
-  formatting.py
-  importer.py
-  polling.py
-tests/
-  test_suite.py
-pyproject.toml
-README.md
-```
-
-## License
-
-MIT
+Fork the repository, create a changes branch, add a regression test for failures, and open a PR from your branch. Keep commits scoped to one concern and update README/docs when CLI behavior changes.
