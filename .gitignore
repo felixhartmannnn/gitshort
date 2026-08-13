@@ -1,4 +1,5 @@
-/images
+__pycache__/
+*.pyc
 .coverage*
 htmlcov/
 .tox/
@@ -8,4 +9,3 @@ htmlcov/
 .DS_Store
 .mypy_cache/
 .ruff_cache/
-.github
